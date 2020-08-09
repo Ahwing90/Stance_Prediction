@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>WQD180102 - FYP</title>
+  <meta name="descriptison" content="Predicting Political Stance Using Sentiment Analysis On Social Media">
+  <meta name="keywords" content="Stance, Sentiment Analysis, Social Media">
+
+  <!-- Plotly, Datepicker -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<script>
+	$(function() {
+		$( ".dtpick" ).datepicker();
+	});
+	</script>
+
+  <!-- Favicons -->
+  <link href="/static/assets/img/favicon.png" rel="icon">
+  <link href="/static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="/static/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/static/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio - v1.3.0
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  
+  
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="/static/assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="">Ng Wei Xin</a></h1>
+      </div>
+
+      <nav class="nav-menu">
+        <ul>
+
+          <li class="active"><a href="#hero"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="#about"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="#stance"><i class="bx bx-file-blank"></i> <span>Stance Prediction</span></a></li>
+          <li><a href="#sentiment"><i class="bx bx-book-content"></i> <span>Sentiment Analysis</span></a></li>
+          <li><a href="#topicmodel"><i class="bx bx-server"></i> Topic Modelling</a></li>
+		  <li>
+		  <form method="post" action="">
+			<a style="padding:12px 15px; margin-bottom:0px;"><i class="bx bx-envelope"></i>
+			{{ form.hidden_tag() }}
+			<label style="color: #a8a9b4;">Date-Picker:</label></a>
+			<a style="padding:0px 15px; margin-bottom:2px;">{{ form.dt(class="dtpick") }}<button type="submit">&nbsp;Go&nbsp;</button></a>
+			<a style="padding:0px 15px; margin-bottom:2px; align-items: right;"></a>
+		  </form>		  
+		  </li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+      <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>Master of Data Science</h1>
+	  <h1>FSKTM, University Malaya</h1>
+	  <p>Final Year Project - WQD180102</p>
+	  <p>Predicting Political Stance Using Sentiment Analysis On Social Media</p>
+      <p>FLASK: <span class="typed" data-typed-items="Sentiment Analysis, Stance Prediction, 2020 US Presidential Election, Donald Trump, Joe Biden"></span></p>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about" style="padding-bottom: 35px;">
+      <div class="container">
+
+        <div class="section-title" style="padding-bottom: 0px;">
+          <h2>About This Research Project</h2>
+		  <p><strong>Supervisor:</strong> Prof. Dr. Teh Ying Wah</p>
+          <p><strong>Field:</strong> Sentiment Analysis</p>
+		  <p><strong>Faculty</strong> of Computer Science &amp; Information Technology, <strong>University of Malaya</strong></p>
+		  <p><strong>Title:</strong> Predicting Political Stance Using Sentiment Analysis On Social Media</p>
+        </div>
+
+      </div>
+
+    </section><!-- End About Section -->
+
+
+    <!-- ======= Project Section ======= -->
+    <section id="project" class="skills section-bg" style="padding-top: 25px; padding-bottom: 20px;">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Project Description</h2>
+          <p>This project aims to demonstrate the application of sentiment analysis techniques in predicting the political sentiment and stance, using the 2020 US Presidential Election as a case study. Data from online and social media, namely Twitter and Reddit, will be crawled on real-time and processed, in order to demonstrate an efficient sentiment prediction.</p>
+		  <br />
+		  <p>Text Preprocessing will be performed on the raw textual data, followed by sentiment analysis, in order to determine the level of political supports for the two main candidates from the bipartisan political systems in the USA. Besides, topic modelling is also performed on the data to determine the main topics happening in the US political arena.</p>
+		  <br />
+		  <p>Crawling, Data Preprocessing and Analysis are carried out in Python and Jupyter Notebook. Data storing is performed locally using MongoDB Database. Visualization and project deployment is done with local web pages (HTML) using FLASK Library in Python.</p>
+        </div>
+
+      </div>
+    </section><!-- End Project Section -->
+
+    <!-- ======= flask Section ======= -->
+    <section id="flask" class="facts">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>FLASK Deployment</h2>
+          <p>The results of sentiment analysis as well as topic modelling are deployed and displayed in HTML web pages, using FLASK Library in Python, and can be found in the following sections.</p><br />
+		  <p>Web Template designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>, Copyright by &copy; <strong><span>iPortfolio</span></strong></p><br />
+        </div>
+
+      </div>
+    </section><!-- End flask Section -->
+
+
+    <!-- ======= Stance Section ======= -->
+    <section id="stance" class="resume section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Stance Prediction</h2>
+          <p>How popular are the two main candidates for the upcoming 2020 US Presidential Election?</p>
+        </div>
+
+        <div class="row contact" data-aos="fade-up" data-aos-delay="400">
+			<div class="icon"><i class="icofont-settings"></i></div>
+			<h4 class="title">Candidates Popularity</h4>
+			<div class="info">
+				<div class="description" id="Mention" style="height:300px;">
+					<script>
+						var Mention = {{varPlot[0] | safe}};
+						Plotly.plot('Mention',Mention,{});
+					</script>
+				</div>
+			</div>
+        </div>
+        <div class="row contact" data-aos="fade-up" data-aos-delay="400">
+			<div class="icon"><i class="icofont-settings"></i></div>
+			<h4 class="title">Overall Stance Prediction: Trump vs. Biden (VADER Analysis)</h4>
+			<div class="info">
+				<div class="description" id="StanceVader" style="height:300px;">
+					<script>
+						var StanceVader = {{varPlot[1] | safe}};
+						Plotly.plot('StanceVader',StanceVader,{});
+					</script>
+				</div>
+ 			</div>
+		</div>
+		<div class="row contact" data-aos="fade-up" data-aos-delay="400">
+			<div class="icon"><i class="icofont-settings"></i></div>
+			<h4 class="title">Overall Stance Prediction: Trump vs. Biden (TextBlob Analysis)</h4>
+			<div class="info">
+				<div class="description" id="StanceTB" style="height:300px;">
+					<script>
+						var StanceTB = {{varPlot[2] | safe}};
+						Plotly.plot('StanceTB',StanceTB,{});
+					</script>
+				</div>
+ 			</div>
+		</div>
+
+
+      </div>
+    </section><!-- End Stance Section -->
+
+
+    <!-- ======= Sentiment Section ======= -->
+    <section id="sentiment" class="resume">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Individual Sentiment</h2>
+          <p>Sentiment Analysis for individual candidates on separate platforms.</p>
+		  <p>Use Date-Picker in left-navigation to view the sentiments for selected date.</p>
+		  
+        </div>
+		
+        <div class="row contact">
+			<div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400" style="padding:0px;">
+				<div class="icon"><i class="icofont-settings"></i></div>
+				<h4 class="title">Trump, VADER (Twitter)</h4>
+				<div class="description info" id="TrumpTwitVD" style="height:400px; padding:0px; margin:2px;">
+					<script>
+						var TrumpTwitVD = {{varPlot[3] | safe}};
+						Plotly.plot('TrumpTwitVD',TrumpTwitVD,{});
+					</script>
+				</div>	
+			</div>
+			<div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500" style="padding:0px;">
+				<div class="icon"><i class="icofont-settings"></i></div>
+				<h4 class="title">Trump, VADER (Reddit)</h4>
+				<div class="description info" id="TrumpReddVD" style="height:400px; padding:0px; margin:2px;">
+					<script>
+						var TrumpReddVD = {{varPlot[4] | safe}};
+						Plotly.plot('TrumpReddVD',TrumpReddVD,{});
+					</script>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400" style="padding:0px;">
+				<div class="icon"><i class="icofont-settings"></i></div>
+				<h4 class="title">Trump, TextBlob (Twitter)</h4>
+				<div class="description info" id="TrumpTwitTB" style="height:400px; padding:0px; margin:2px;">
+					<script>
+						var TrumpTwitTB = {{varPlot[5] | safe}};
+						Plotly.plot('TrumpTwitTB',TrumpTwitTB,{});
+					</script>
+				</div>	
+			</div>
+			<div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500" style="padding:0px;">
+				<div class="icon"><i class="icofont-settings"></i></div>
+				<h4 class="title">Trump, TextBlob (Reddit)</h4>
+				<div class="description info" id="TrumpReddTB" style="height:400px; padding:0px; margin:2px;">
+					<script>
+						var TrumpReddTB = {{varPlot[6] | safe}};
+						Plotly.plot('TrumpReddTB',TrumpReddTB,{});
+					</script>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400" style="padding:0px;">
+				<div class="icon"><i class="icofont-settings"></i></div>
+				<h4 class="title">Biden, VADER (Twitter)</h4>
+				<div class="description info" id="BidenTwitVD" style="height:400px; padding:0px; margin:2px;">
+					<script>
+						var BidenTwitVD = {{varPlot[7] | safe}};
+						Plotly.plot('BidenTwitVD',BidenTwitVD,{});
+					</script>
+				</div>	
+			</div>
+			<div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500" style="padding:0px;">
+				<div class="icon"><i class="icofont-settings"></i></div>
+				<h4 class="title">Biden, VADER (Reddit)</h4>
+				<div class="description info" id="BidenReddVD" style="height:400px; padding:0px; margin:2px;">
+					<script>
+						var BidenReddVD = {{varPlot[8] | safe}};
+						Plotly.plot('BidenReddVD',BidenReddVD,{});
+					</script>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400" style="padding:0px;">
+				<div class="icon"><i class="icofont-settings"></i></div>
+				<h4 class="title">Biden, TextBlob (Twitter)</h4>
+				<div class="description info" id="BidenTwitTB" style="height:400px; padding:0px; margin:2px;">
+					<script>
+						var BidenTwitTB = {{varPlot[9] | safe}};
+						Plotly.plot('BidenTwitTB',BidenTwitTB,{});
+					</script>
+				</div>	
+			</div>
+			<div class="col-lg-6 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500" style="padding:0px;">
+				<div class="icon"><i class="icofont-settings"></i></div>
+				<h4 class="title">Biden, TextBlob (Reddit)</h4>
+				<div class="description info" id="BidenReddTB" style="height:400px; padding:0px; margin:2px;">
+					<script>
+						var BidenReddTB = {{varPlot[10] | safe}};
+						Plotly.plot('BidenReddTB',BidenReddTB,{});
+					</script>
+				</div>
+			</div>
+        </div>
+
+      </div>
+    </section><!-- End Sentiment Section -->
+
+
+    <!-- ======= Topic Modelling Section ======= -->
+    <section id="topicmodel" class="portfolio section-bg">
+		<div class="container">
+
+			<div class="section-title">
+				<h2>Topic Modelling with Latent Dirichlet Allocation (LDA).</h2>
+				<p>Use Date-Picker in left-navigation to choose date.</p>
+				<p>Select Channel To View Topics.</p>
+			</div>
+
+			<div class="row" data-aos="fade-up">
+				<div class="col-lg-12 d-flex justify-content-center">
+					<ul id="portfolio-flters" style="margin-left: 0px">
+						<li data-filter=".filter-app" class="filter-active">Twitter</li>
+						<li data-filter=".filter-web">Reddit</li>
+					</ul>
+			  </div>
+			</div>
+			<!-- NWX: making use of default class defined in the template -->
+			<!-- assume 'filter-app' for Twitter Channel -->
+			<!-- assume 'filter-web' for Reddit Channel -->
+			
+			<div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+
+				<!-- Twitter: Topic Modelling -->
+				<div class="portfolio-item filter-app">
+					<iframe src="{{varLDA[0]}}" style="margin: 0; padding: 0; border:none; overflow: hidden; height:880px; width:1250px;"></iframe>
+				</div>
+
+				<!-- Reddit: Topic Modelling -->
+				<div class="portfolio-item filter-web">
+					<iframe src="{{varLDA[1]}}" style="margin: 0; padding: 0; border:none; overflow: hidden; height:880px; width:1250px;"></iframe>
+				</div>
+
+			</div>
+		</div>
+
+    </section><!-- End Topic Modelling Section -->
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        <strong><span>WQD180102</span></strong> Final Year Project
+      </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <!-- <script src="/static/assets/vendor/jquery/jquery.min.js"></script> -->
+  <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="/static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="/static/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="/static/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="/static/assets/vendor/typed.js/typed.min.js"></script>
+  <script src="/static/assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/assets/js/main.js"></script>
+
+</body>
+
+</html>
